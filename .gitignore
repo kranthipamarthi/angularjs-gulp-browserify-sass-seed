@@ -24,9 +24,9 @@ coverage
 
 # Build folder and files
 build
-css/main.css
-css/main.css.map
-js/bundle.js
+app/css/main.css
+app/css/main.css.map
+app/js/bundle.js
 
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
