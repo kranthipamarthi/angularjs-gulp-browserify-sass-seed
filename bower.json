@@ -1,0 +1,27 @@
+{
+  "name": "angularjs-seed",
+  "version": "0.0.0",
+  "description": "AngularJS Starting Template",
+  "main": "gulpfile.js",
+  "authors": [
+    "Kranthi Pamarthi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-animate": "~1.4.3",
+    "angular-route": "~1.4.3",
+    "angular-ui-router": "~0.2.15",
+    "jquery": "~2.1.4",
+    "animate.css": "~3.3.0",
+    "bootstrap": "~3.3.5",
+    "fontawesome": "~4.3.0"
+  }
+}

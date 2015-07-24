@@ -1,3 +1,6 @@
+# Mac OS X 
+.DS_Store
+
 # Logs
 logs
 *.log
@@ -19,9 +22,12 @@ coverage
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
+# Build folder
+build
 
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+
+#Bower dependencies
+app/bower_components
