@@ -1,1 +1,0 @@
-{"version":3,"sources":["temp.css"],"names":[],"mappings":"AAAA;EACE,uBAAuB;EACvB,qBAAc;EAAd,sBAAc;EAAd,qBAAc;EAAd,cAAc;EACd,2BAAmB;MAAnB,4BAAmB;UAAnB,mBAAmB,EAAE","file":"main.css","sourcesContent":["h1 {\n  box-sizing: border-box;\n  display: flex;\n  align-self: center; }\n"],"sourceRoot":"/source/"}
