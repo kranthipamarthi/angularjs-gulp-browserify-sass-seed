@@ -3,15 +3,15 @@ var gulp = require('gulp');
 
 // plugins
 var connect = require('gulp-connect'),
-	jshint = require('gulp-jshint'),
-	uglify = require('gulp-uglify'),
-	minifyCSS = require('gulp-minify-css'),
-	sass = require('gulp-sass'),
-	sourcemaps = require('gulp-sourcemaps'),
-	autoprefixer = require('gulp-autoprefixer'),
-	clean = require('gulp-clean'),
-	browserify = require('gulp-browserify'),
-	concat = require('gulp-concat');
+  jshint = require('gulp-jshint'),
+  uglify = require('gulp-uglify'),
+  minifyCSS = require('gulp-minify-css'),
+  sass = require('gulp-sass'),
+  sourcemaps = require('gulp-sourcemaps'),
+  autoprefixer = require('gulp-autoprefixer'),
+  clean = require('gulp-clean'),
+  browserify = require('gulp-browserify'),
+  concat = require('gulp-concat');
 
 // tasks
 gulp.task('lint', function() {
@@ -37,7 +37,7 @@ gulp.task('minify-css', function() {
 
 gulp.task('sass', function () {
   gulp.src(['./app/**/*.scss', '!./app/bower_components/**'])
-  	.pipe(sourcemaps.init())
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'nested'}).on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['> 5%', 'last 2 version', 'ie 8', 'ie 9']
@@ -77,6 +77,16 @@ gulp.task('copy-html-files', function () {
     .pipe(gulp.dest('build/'));
 });
 
+gulp.task('copy-img-files', function () {
+  gulp.src('./app/img/*.*')
+    .pipe(gulp.dest('build/img/'));
+});
+
+gulp.task('copy-font-files', function () {
+  gulp.src('./app/fonts/*.*')
+    .pipe(gulp.dest('build/fonts/'));
+});
+
 gulp.task('serve', function () {
   connect.server({
     root: 'app/',
@@ -101,6 +111,10 @@ gulp.task('browserify', function() {
   .pipe(gulp.dest('./app/js'))
 });
 
+gulp.task('browserify:watch', function () {
+  gulp.watch('./app/**/*.js', ['browserify']);
+});
+
 gulp.task('browserifyDist', function() {
   gulp.src(['app/js/main.js'])
   .pipe(browserify({
@@ -115,10 +129,10 @@ gulp.task('browserifyDist', function() {
 
 // default task
 gulp.task('default',
-  ['lint', 'sass', 'sass:watch', 'browserify', 'serve']
+  ['lint', 'sass', 'sass:watch', 'browserify', 'browserify:watch', 'serve']
 );
 
 // build task
 gulp.task('build',
-  ['lint', 'sass-build', 'browserifyDist', 'copy-html-files', 'copy-bower-components', 'serve-build']
+  ['lint', 'sass-build', 'browserifyDist', 'copy-html-files', 'copy-img-files', 'copy-font-files', 'copy-bower-components', 'serve-build']
 );
